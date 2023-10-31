@@ -21,11 +21,12 @@ public class LibraryController {
 	public LibraryController(LibraryService libraryService) {
 		this.libraryService = libraryService;
 	}
-
+	
     @GetMapping
     public String index(Model model) {
     	List<Library> libraries = this.libraryService.findAll();
     	model.addAttribute("libraries", libraries);
         return "library/index";
     }
+   
 }
